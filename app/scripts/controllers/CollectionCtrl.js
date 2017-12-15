@@ -9,3 +9,4 @@
       .module('blocJams')
       .controller('CollectionCtrl', CollectionCtrl);
 })();
+//(albumPicasso));
