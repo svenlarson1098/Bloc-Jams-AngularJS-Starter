@@ -39,7 +39,7 @@
             for (var i = 0; i < numberOfAlbums; i++) {
                 albums.push(this.getAlbum());
             }
-    return albums;
+            return albums;  
           };
 
     return Fixtures;
