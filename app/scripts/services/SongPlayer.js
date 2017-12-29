@@ -23,7 +23,7 @@
             currentBuzzObject.pause();
             song.playing = false;
         };
-        
+
             currentBuzzObject = new buzz.sound(song.audioUrl, {
             formats: ['mp3'],
             preload: true
@@ -33,7 +33,7 @@
 
         currentBuzzObject.play();
         song.playing = true;
-      }
+      
     };
       return SongPlayer;
     }
