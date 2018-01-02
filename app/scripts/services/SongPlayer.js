@@ -122,7 +122,7 @@
 
           if (currentSongIndex >= currentAlbum.songs.length) {
             stopSong(SongPlayer.currentSong);
-            
+            setSong(currentAlbum.songs[0]); /** needed to set song array to 0*/
           } else {
             var song = currentAlbum.songs[currentSongIndex];
             setSong(song);
