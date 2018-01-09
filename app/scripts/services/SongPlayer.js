@@ -73,7 +73,13 @@
 *@desc Current playback time (in seconds) of currently playing songs
 *@type {Number}
 */
-SongPlayer.currentTime= null
+        SongPlayer.currentTime= null;
+
+/**
+*@desc default volume level set at 80% out of 100.
+*@type {Number}
+*/
+        SongPlayer.volume = 80;
 
 /**
 *@function SongPlayer.playing
@@ -153,6 +159,17 @@ SongPlayer.currentTime= null
           }
       };
 
+/**
+*@function SongPlayer.setVolume
+*@desc Changes the volume level
+*@param {Number} volume percentage
+*/
+
+      SongPlayer.setVolume = function(volume) {
+          if(currentBuzzObject) {
+             currentBuzzObject.setVolume(volume);
+          }
+      };
 
       return SongPlayer;
     }
