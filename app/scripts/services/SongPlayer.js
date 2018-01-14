@@ -51,7 +51,16 @@
                 SongPlayer.currentTime = currentBuzzObject.getTime();
             });
         });
-
+/**
+*@function autoplay
+*@desc plays the next track when the previous track finishes
+*@param {Object} songs
+*/
+        currentBuzzObject.bind('ended', function() {
+            $rootScope.$apply(function() {
+            SongPlayer.next();
+          });
+      });
     SongPlayer.currentSong = song;
   };
 
@@ -170,6 +179,27 @@
              currentBuzzObject.setVolume(volume);
           }
       };
+/**
+*@function SongPlayer.mute
+*@desc Mutes the volume
+*@param {object} song
+*/
+
+      SongPlayer.mute = function(song) {
+        song = song || SongPlayer.currentSong
+        currentBuzzObject.mute();
+        song.isMuted = true;
+      }
+/**
+*@function SongPlayer.unmute
+*@desc unmutes the volume retains current level
+*@param {object} song
+*/
+      SongPlayer.unmute = function(song) {
+        song = song || SongPlayer.currentSong
+        currentBuzzObject.unmute();
+        song.isMuted = false;
+      }
 
       return SongPlayer;
     }
